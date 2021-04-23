@@ -25,5 +25,5 @@
         echo "file đã có rồi";
     }else  move_uploaded_file($_FILES["file"]["tmp_name"],"images/" . $_FILES["file"]["name"]);
     mysqli_close($conn);
-    //header("location:admin.php?id=sp&act=sp");
+    header("location:admin.php?id=sp&act=sp");
 ?>

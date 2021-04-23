@@ -1,9 +1,85 @@
+<button class="button is-danger"  onclick="myFunction('add')">Thêm</button></td>
+  <div class="modal" id="add">
+          <div class="modal-background"></div>
+          <div class="modal-card">
+              <header class="modal-card-head">
+              <p class="modal-card-title">Thêm sản phẩm</p>
+              <button class="delete" onclick="myFunction('add')" aria-label="close"></button>
+              </header>
+              <section class="modal-card-body">
+              <form action="xulythem.php" method="POST" class="p-6 m-6 box" name="them_sp" enctype= "multipart/form-data">
+                    <h3 class="is-size-3 has-text-center">Thêm</h3>
+                    <div class="field">
+                        <label for="" class="label">Id:</label>
+                        <div class="control">
+                            <input type="text" class="input" name="msp" value="" id="msp">
+                        </div>
+                        <div id="showUsernameError" class="has-text-danger"></div>
+                    </div>
 
+                    <div class="field">
+                        <label for="" class="label">ID thể loại:</label>
+                        <div class="control">
+                            <input type="text" class="input" name="mtl" value="" id="mtl">
+                        </div>    
+                        <div id="showPasswordError" class="has-text-danger"></div>
+                    </div>
 
-<div class="box">
-     <a href="index.php?id=add&act=add"><img src="images/plus.png" alt="" class="image" style="width:100px;"></a>
-</div>
+                    <div class="field">
+                        <label for="" class="label">Tên</label>
+                        <div class="control">
+                            <input type="text" class="input" name="ten">
+                        </div>
+                        <div id="showNameError" class="has-text-danger"></div>
+                    </div>
 
+                    <div class="field">
+                        <label for="" class="label">Đơn giá:</label>
+                        <div class="control">
+                            <input type="text" class="input" name="dg">
+                        </div>
+                        <div id="showNameError" class="has-text-danger"></div>
+                    </div>
+                    <div class="field">
+                        <label for="" class="label">Số lượng:</label>
+                        <div class="control">
+                            <input type="text" class="input" name="sl">
+                        </div>
+                        <div id="showNameError" class="has-text-danger"></div>
+                    </div>
+
+                    <div class="field">
+                      <div class="file has-name">
+                            <label class="file-label">
+                            <input class="file-input" type="file" name="file">
+                            <span class="file-cta">
+                                  <span class="file-icon">
+                                  <i class="fas fa-upload"></i>
+                                  </span>
+                                  <span class="file-label">
+                                        Choose a file…
+                                  </span>
+                                  </span>
+                                  <span class="file-name">
+                                        Hình ảnh
+                                  </span>
+                                  </label>
+                      </div>
+                    </div>
+                    <div class="field">
+                        <div class="control">
+                            <input type="submit" class="button" name="submit" value="Thêm">
+                        </div>
+                    </div>
+              </form>
+
+              </section>
+              <footer class="modal-card-foot">
+              <a   class="button is-primary" href="<?php echo 'xulyxoa.php?idsp='.$row['id']?>">Xóa</a>
+              <button class="button" onclick="myFunction('<?php echo $row['id'];?>')">Cancel</button>
+              </footer>
+          </div>
+  </div>
 <table class="table">
   <thead>
     <tr>
@@ -19,14 +95,9 @@
 
     </tr>
     </thead>
-   
-
-
 <?php  if ($result = $conn -> query($sql)) {
             $stt = 1;
       while ($row = $result -> fetch_array())  { ?>
-
-
 <tbody>
     <tr>
       <td><?php echo $stt; $stt++?></td>

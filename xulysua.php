@@ -14,10 +14,9 @@
 
     $src="images/" . $_FILES["file"]["name"];
 $sql = "UPDATE `sanpham` SET `id_theloai`='$idtl',`ten`='$tsp',`dongia`='$dg',`image_link`='$src' WHERE id='$msp'";
-//echo $sql;
+echo $sql;
 mysqli_query($conn,$sql);
 mysqli_Close($conn);
-header("location:admin.php?id=sp&act=sp");
-
+//header("location:admin.php?id=sp&act=sp");
 }
 ?>

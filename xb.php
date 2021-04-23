@@ -4,10 +4,6 @@
     <a href='admin.php?id=sp&tl=xb' style="color:white;" id='xb'><div>Xbox</div></a>
   </div>
 </nav>
-
-
-
-
 <div class="box">
      <a href="admin.php?id=add&act=add"><img src="images/plus.png" alt="" class="image" style="width:100px;"></a>
 
@@ -27,9 +23,7 @@
 
     </tr>
     </thead>
-   
-
-
+  
 <?php  if ($result = $conn -> query($sql)) {
             $stt = 1;
       while ($row = $result -> fetch_array())  { 
@@ -62,7 +56,79 @@
                     </footer>
                 </div>
         </div>
-      <td><a class="button is-primary" href="<?php echo 'admin.php?id=fix&idsp='.$row['id']?>"> Sửa</a></td>
+      <<td><button class="button is-primary" onclick="myFunction('fix-<?php echo $row['id'];?>')">Sửa</button></td>
+        <div class="modal" id="fix-<?php echo $row['id'];?>">
+                <div class="modal-background"></div>
+                <div class="modal-card">
+                    <header class="modal-card-head">
+                    <p class="modal-card-title">Sửa sản phẩm</p>
+                    <button class="delete" onclick="myFunction('fix-<?php echo $row['id'];?>')" aria-label="close"></button>
+                    </header>
+                    <section class="modal-card-body">
+                    <form action="xulysua.php" method="POST"  name="them_sp" enctype= "multipart/form-data">
+                      
+
+
+                    <input type="text" class="is-hidden" name="msp" value="<?php echo $row['id'] ;?>">
+                      <div class="field">
+                          <label for="" class="label">ID thể loại:</label>
+                          <div class="control">
+                              <input type="text" class="input" name="mtl" value="" id="mtl">
+                          </div>    
+                          <div id="showPasswordError" class="has-text-danger"></div>
+                      </div>
+
+                      <div class="field">
+                          <label for="" class="label">Tên</label>
+                          <div class="control">
+                              <input type="text" class="input" name="ten">
+                          </div>
+                          <div id="showNameError" class="has-text-danger"></div>
+                      </div>
+
+                      <div class="field">
+                          <label for="" class="label">Đơn giá:</label>
+                          <div class="control">
+                              <input type="text" class="input" name="dg">
+                          </div>
+                          <div id="showNameError" class="has-text-danger"></div>
+                      </div>
+
+                      <div class="field">
+                        <label for="" class="label">Số lượng:</label>
+                        <div class="control">
+                            <input type="text" class="input" name="sl">
+                        </div>
+                        <div id="showNameError" class="has-text-danger"></div>
+                    </div>
+
+                      <div class="field">
+                        <div class="file has-name">
+                              <label class="file-label">
+                                <input class="file-input" type="file" name="file">
+                                <span class="file-cta">
+                                      <span class="file-icon">
+                                      <i class="fas fa-upload"></i>
+                                      </span>
+                                      <span class="file-label">
+                                            Choose a file…
+                                      </span>
+                                      </span>
+                                      <span class="file-name">
+                                            Hình ảnh
+                                </span>
+                              </label>
+                        </div>
+                      </div>
+                    </section>
+                    <footer class="modal-card-foot">
+                    <input class="button is-primary" type="submit" class="button" name="submit" value="Sửa">
+                    </form>
+                    <button class="button" onclick="myFunction('fix-<?php echo $row['id'];?>')">Cancel</button>
+                    </footer>
+                    
+                </div>
+        </div>
       
     </tr>
   </tbody>

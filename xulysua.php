@@ -17,6 +17,6 @@ $sql = "UPDATE `sanpham` SET `id_theloai`='$idtl',`ten`='$tsp',`dongia`='$dg',`i
 echo $sql;
 mysqli_query($conn,$sql);
 mysqli_Close($conn);
-//header("location:admin.php?id=sp&act=sp");
+header("location:admin.php?id=sp&act=sp");
 }
 ?>

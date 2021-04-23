@@ -7,7 +7,7 @@
               <button class="delete" onclick="myFunction('add')" aria-label="close"></button>
               </header>
               <section class="modal-card-body">
-              <form action="xulythem.php" method="POST" class="p-6 m-6 box" name="them_sp" enctype= "multipart/form-data">
+              <form action="xulythem.php" method="POST"  name="them_sp" enctype= "multipart/form-data">
                     <h3 class="is-size-3 has-text-center">Thêm</h3>
                     <div class="field">
                         <label for="" class="label">Id:</label>
@@ -128,6 +128,17 @@
                     <section class="modal-card-body">
                     <form action="xulysua.php" method="POST"  name="them_sp" enctype= "multipart/form-data">
                       
+
+
+                    <input type="text" class="input" name="msp" value="" id="<?php echo $row['id'] ;?>">
+                      <div class="field">
+                          <label for="" class="label">ID thể loại:</label>
+                          <div class="control">
+                              <input type="text" class="input" name="mtl" value="" id="mtl">
+                          </div>    
+                          <div id="showPasswordError" class="has-text-danger"></div>
+                      </div>
+
                       <div class="field">
                           <label for="" class="label">Tên</label>
                           <div class="control">

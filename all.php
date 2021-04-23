@@ -130,7 +130,7 @@
                       
 
 
-                    <input type="text" class="is-hidden" name="msp" value="" id="<?php echo $row['id'] ;?>">
+                    <input type="text" class="is-hidden" name="msp" value="<?php echo $row['id'] ;?>">
                       <div class="field">
                           <label for="" class="label">ID thể loại:</label>
                           <div class="control">

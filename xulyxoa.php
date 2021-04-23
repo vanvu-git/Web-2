@@ -9,5 +9,5 @@ $sql = "DELETE FROM `sanpham` WHERE id = '$idsp'";
 echo $sql;
 mysqli_query($conn,$sql);
 
-header("location:index.php?id=sp&act=sp");
+header("location:admin.php?id=sp&act=sp");
 ?>

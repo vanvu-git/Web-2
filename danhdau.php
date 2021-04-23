@@ -17,6 +17,6 @@ echo $sql;
 
 mysqli_query($conn,$sql);
 
-header("location:index.php?id=dh&act=dh");
+header("location:admin.php?id=dh&act=dh");
     }
 ?>

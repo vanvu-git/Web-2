@@ -1,11 +1,11 @@
 <nav class="columns has-text-centered">
     <div class="column is-12 has-text-weight-bold " style="background-color:blue;margin-top:3%;">
-        <a href='index.php?id=sp&tl=ps' style="color:white;" id='ps'><div>PlayStation</div></a>
+        <a href='admin.php?id=sp&tl=ps' style="color:white;" id='ps'><div>PlayStation</div></a>
     </div>
 </nav>
 
 <div class="box">
-     <a href="index.php?id=add&act=add"><img src="images/plus.png" alt="" class="image" style="width:100px;"></a>
+     <a href="admin.php?id=add&act=add"><img src="images/plus.png" alt="" class="image" style="width:100px;"></a>
 
 
 <table class="table">
@@ -58,7 +58,7 @@
                     </footer>
                 </div>
         </div>
-      <td><a class="button is-primary" href="<?php echo 'index.php?id=fix&idsp='.$row['id']?>"> Sửa</a></td>
+      <td><a class="button is-primary" href="<?php echo 'admin.php?id=fix&idsp='.$row['id']?>"> Sửa</a></td>
       
     </tr>
   </tbody>

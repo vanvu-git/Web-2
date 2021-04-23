@@ -20,7 +20,7 @@
 </head>
 <body class="container is-fuild">
     <header class="content p-4">
-        <h1 class="title is-1"><a href="index.php" class="has-text-danger">ConsoleShop</a></h1>
+        <h1 class="title is-1"><a href="admin.php" class="has-text-danger">ConsoleShop</a></h1>
         <h2 class="subtitle is-4">Chúng tôi bán máy game xịn xò</h2>
         <form action="search.php" method="GET">
             <input type="search" class="input" placeholder="Tìm kiếm" name="search">
@@ -33,7 +33,7 @@
 
     <nav class="columns has-text-centered">
         <div class="column is-3">
-            <a href="index.php">Home</a>
+            <a href="admin.php">Home</a>
         </div>
 
         <div class="column is-3">

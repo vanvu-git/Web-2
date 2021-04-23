@@ -15,16 +15,16 @@
   </div>
   <div class="dropdown-menu" id="dropdown-menu3" role="menu">
     <div class="dropdown-content">
-      <a href="index.php?id=dh&act=dh&start=2021-03-01&end=2021-05-01" class="dropdown-item">
+      <a href="admin.php?id=dh&act=dh&start=2021-03-01&end=2021-05-01" class="dropdown-item">
         01/03/2021 -> 01/05/2021
       </a>
-      <a href="index.php?id=dh&act=dh&start=2021-01-01&end=2021-03-01" class="dropdown-item">
+      <a href="admin.php?id=dh&act=dh&start=2021-01-01&end=2021-03-01" class="dropdown-item">
         01/01/2021 -> 01/03/2021
       </a>
-      <a href="index.php?id=dh&act=dh&start=2020-11-01&end=2021-01-01" class="dropdown-item">
+      <a href="admin.php?id=dh&act=dh&start=2020-11-01&end=2021-01-01" class="dropdown-item">
        01/11/2020 -> 01/01/2021
       </a>
-      <a href="index.php?id=dh&act=dh" class="dropdown-item">
+      <a href="admin.php?id=dh&act=dh" class="dropdown-item">
         Toàn bộ
       </a>
      

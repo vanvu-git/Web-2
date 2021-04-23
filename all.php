@@ -71,13 +71,14 @@
                             <input type="submit" class="button" name="submit" value="Thêm">
                         </div>
                     </div>
-              </form>
+              
 
               </section>
               <footer class="modal-card-foot">
-              <a   class="button is-primary" href="<?php echo 'xulyxoa.php?idsp='.$row['id']?>">Xóa</a>
+              <<input type="submit" class="button" name="submit" value="Thêm">
               <button class="button" onclick="myFunction('<?php echo $row['id'];?>')">Cancel</button>
               </footer>
+              </form>
           </div>
   </div>
 <table class="table">

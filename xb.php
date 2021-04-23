@@ -1,13 +1,8 @@
-
 <nav class="columns has-text-centered">
   <div class="column is-12 has-text-weight-bold " style="background-color:#00d123;margin-top:3%;">
     <a href='admin.php?id=sp&tl=xb' style="color:white;" id='xb'><div>Xbox</div></a>
   </div>
 </nav>
-<div class="box">
-     <a href="admin.php?id=add&act=add"><img src="images/plus.png" alt="" class="image" style="width:100px;"></a>
-
-
 <table class="table">
   <thead>
     <tr>
@@ -20,16 +15,12 @@
       <th><abbr title="soluong">Số lượng</abbr></th>
       <th><abbr title="del">Xóa</abbr></th>
       <th><abbr title="update">Sửa</abbr></th>
-
     </tr>
     </thead>
-  
 <?php  if ($result = $conn -> query($sql)) {
             $stt = 1;
       while ($row = $result -> fetch_array())  { 
           if($row['id_theloai'] == "XB") {?>
-
-
 <tbody>
     <tr>
       <td><?php echo $stt; $stt++?></td>
@@ -132,10 +123,5 @@
       
     </tr>
   </tbody>
-
-
-
 <?php }}}?>
-
 </table>
-</div>

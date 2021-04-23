@@ -4,13 +4,6 @@
           <a href='admin.php?id=sp&tl=nt' style="color:white;" id='xb'><div>Nintendo</div></a>
         </div>
 </nav>
-
-
-
-<div class="box">
-     <a href="admin.php?id=add&act=add"><img src="images/plus.png" alt="" class="image" style="width:100px;"></a>
-
-
 <table class="table">
   <thead>
     <tr>
@@ -143,4 +136,3 @@
 <?php }}}?>
 
 </table>
-</div>

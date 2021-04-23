@@ -11,7 +11,7 @@
     }
     $src= "images/" . $_FILES["file"]["name"];
     $sql = "INSERT INTO `sanpham`(`id`, `id_theloai`, `ten`,`dongia`, `image_link`,'Soluong')
-     VALUES ( '$idsp' , '$idtl' , '$tsp' , '$dg' , '$src','$sl')";
+     VALUES ( '$idsp' , '$idtl' , '$tsp' , '$dg' , '$src', '$sl')";
     echo $sql;
     mysqli_query($conn,$sql);
  

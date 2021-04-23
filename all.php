@@ -75,7 +75,7 @@
 
               </section>
               <footer class="modal-card-foot">
-              <<input type="submit" class="button" name="submit" value="Thêm">
+              <input class="button is-primary" type="submit" class="button" name="submit" value="Thêm">
               <button class="button" onclick="myFunction('<?php echo $row['id'];?>')">Cancel</button>
               </footer>
               </form>

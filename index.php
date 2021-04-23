@@ -43,7 +43,7 @@
     }
 
 ?>
-<form action="admin.php" method="POST" class="p-3 m-5 box" name="admin">
+<form action="index.php" method="POST" class="p-3 m-5 box" name="admin">
 <div class="field">
   <label class="label">Tài khoản</label>
   <div class="control">

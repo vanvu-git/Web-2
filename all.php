@@ -129,15 +129,10 @@
                     <form action="xulysua.php" method="POST" class="p-6 m-6 box" name="them_sp" enctype= "multipart/form-data">
                       <h3 class="is-size-3 has-text-center">Sửa</h3>
                       
-                      <div class="field" style="display:none;">
-                        <label for="" class="label">Id:</label>
-                        <div class="control">
-                            <input type="text" class="input" name="msp" value="<?php echo $row['id']; ?>" id="msp">
-                        </div>
-                        <div id="showUsernameError" class="has-text-danger"></div>
-                      </div>
-                      <div class="field">
                       
+                        <input type="text" class="is-hidden" name="msp" value="<?php echo $row['id']; ?>" id="msp">
+                       
+                      <div class="field">
                           <label for="" class="label">Tên</label>
                           <div class="control">
                               <input type="text" class="input" name="ten">

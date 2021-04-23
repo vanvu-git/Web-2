@@ -15,8 +15,7 @@
         if(isset($_POST['username'])){
           $conn = new  mysqli("localhost", "root","","console-beta");
 
-          $sql = "SELECT * FROM sanpham";
-
+         
             $username = $_POST['username'];
             $password = $_POST['password'];
 

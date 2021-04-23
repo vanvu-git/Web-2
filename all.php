@@ -127,7 +127,7 @@
                     </header>
                     <section class="modal-card-body">
                     <form action="xulysua.php" method="POST" class="p-6 m-6 box" name="them_sp" enctype= "multipart/form-data">
-                      <h3 class="is-size-3 has-text-center">Sửa</h3>
+                      
                       <div class="field">
                           <label for="" class="label">Tên</label>
                           <div class="control">

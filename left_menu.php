@@ -1,4 +1,3 @@
-
 <div class="menu">
   <ul class="menu-list">
   <?php if($user['ChucVu'] == "QL") {?>

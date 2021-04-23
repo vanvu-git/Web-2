@@ -8,7 +8,7 @@
 
 <nav class="navbar" role="navigation" aria-label="main navigation" style=" background-color: #020203;"> 
   <div class="navbar-brand">
-   <h1 class="title is-1"><a href="index.php" class="has-text-primary">ConsoleShop<span class="has-text-white">/Admin</span></a></h1>
+   <h1 class="title is-1"><a href="admin.php" class="has-text-primary">ConsoleShop<span class="has-text-white">/Admin</span></a></h1>
     
     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
       <span aria-hidden="true"></span>

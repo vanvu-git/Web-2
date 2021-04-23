@@ -13,9 +13,8 @@
     $loi = '';
     if(isset($_POST['submit'])){
         if(isset($_POST['username'])){
-          $conn = new  mysqli("localhost", "root","","console-beta");
-
          
+
             $username = $_POST['username'];
             $password = $_POST['password'];
 

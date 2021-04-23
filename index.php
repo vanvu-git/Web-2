@@ -27,7 +27,7 @@
             }
             
             $sql = "select * from nhanvien where username = '$username' and password = '$password'";
-            
+            echo $sql;
             $result = mysqli_query($conn, $sql);
             if(mysqli_num_rows($result) > 0){
                 $user = mysqli_fetch_assoc($result);

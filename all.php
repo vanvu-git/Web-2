@@ -118,12 +118,12 @@
                 </div>
         </div>
         <td><button class="button is-primary" onclick="myFunction('<?php echo $row['id'];?>')">Sửa</button></td>
-        <div class="modal" id="<?php echo $row['id'];?>">
+        <div class="modal" id="fix-<?php echo $row['id'];?>">
                 <div class="modal-background"></div>
                 <div class="modal-card">
                     <header class="modal-card-head">
                     <p class="modal-card-title">Sửa sản phẩm</p>
-                    <button class="delete" onclick="myFunction('<?php echo $row['id'];?>')" aria-label="close"></button>
+                    <button class="delete" onclick="myFunction('fix-<?php echo $row['id'];?>')" aria-label="close"></button>
                     </header>
                     <section class="modal-card-body">
                     <form action="xulysua.php" method="POST" class="p-6 m-6 box" name="them_sp" enctype= "multipart/form-data">
@@ -179,20 +179,12 @@
                               </label>
                         </div>
                       </div>
-
-
-                      <div class="field">
-                          <div class="control">
-                              <input type="submit" class="button" name="submit" value="Sửa">
-                          </div>
-                      </div>
-                    </form>
-
                     </section>
                     <footer class="modal-card-foot">
-                    <a   class="button is-primary" href="<?php echo 'xulyxoa.php?idsp='.$row['id']?>">Xóa</a>
-                    <button class="button" onclick="myFunction('<?php echo $row['id'];?>')">Cancel</button>
+                    <input class="button is-primary" type="submit" class="button" name="submit" value="Sửa">
+                    <button class="button" onclick="myFunction('fix-<?php echo $row['id'];?>')">Cancel</button>
                     </footer>
+                    </form>
                 </div>
         </div>
     </tr>

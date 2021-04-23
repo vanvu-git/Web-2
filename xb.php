@@ -48,7 +48,7 @@
                     </footer>
                 </div>
         </div>
-      <<td><button class="button is-primary" onclick="myFunction('fix-<?php echo $row['id'];?>')">Sửa</button></td>
+      <td><button class="button is-primary" onclick="myFunction('fix-<?php echo $row['id'];?>')">Sửa</button></td>
         <div class="modal" id="fix-<?php echo $row['id'];?>">
                 <div class="modal-background"></div>
                 <div class="modal-card">

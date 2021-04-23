@@ -130,7 +130,7 @@
                       <h3 class="is-size-3 has-text-center">Sửa</h3>
                       
                       
-                        <input type="text" class="is-hidden" name="msp" value="<?php echo $row['id']; ?>" id="msp">
+
                        
                       <div class="field">
                           <label for="" class="label">Tên</label>

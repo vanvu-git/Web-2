@@ -3,6 +3,7 @@
     <a href='admin.php?id=sp&tl=xb' style="color:white;" id='xb'><div>Xbox</div></a>
   </div>
 </nav>
+
 <table class="table">
   <thead>
     <tr>

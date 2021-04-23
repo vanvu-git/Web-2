@@ -126,7 +126,7 @@
                     <button class="delete" onclick="myFunction('fix-<?php echo $row['id'];?>')" aria-label="close"></button>
                     </header>
                     <section class="modal-card-body">
-                    <form action="xulysua.php" method="POST" class="p-6 m-6 box" name="them_sp" enctype= "multipart/form-data">
+                    <form action="xulysua.php" method="POST"  name="them_sp" enctype= "multipart/form-data">
                       
                       <div class="field">
                           <label for="" class="label">Tên</label>

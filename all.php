@@ -69,9 +69,9 @@
               </section>
               <footer class="modal-card-foot">
               <input class="button is-primary" type="submit" class="button" name="submit" value="Thêm">
+              </form>
               <button class="button" onclick="myFunction('<?php echo $row['id'];?>')">Cancel</button>
               </footer>
-              </form>
           </div>
   </div>
 <table class="table">
@@ -184,9 +184,10 @@
                     </section>
                     <footer class="modal-card-foot">
                     <input class="button is-primary" type="submit" class="button" name="submit" value="Sửa">
+                    </form>
                     <button class="button" onclick="myFunction('fix-<?php echo $row['id'];?>')">Cancel</button>
                     </footer>
-                    </form>
+                    
                 </div>
         </div>
     </tr>

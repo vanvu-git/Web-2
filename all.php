@@ -66,13 +66,6 @@
                                   </label>
                       </div>
                     </div>
-                    <div class="field">
-                        <div class="control">
-                            <input type="submit" class="button" name="submit" value="Thêm">
-                        </div>
-                    </div>
-              
-
               </section>
               <footer class="modal-card-foot">
               <input class="button is-primary" type="submit" class="button" name="submit" value="Thêm">
@@ -93,7 +86,6 @@
       <th><abbr title="soluong">Số lượng</abbr></th>
       <th><abbr title="del">Xóa</abbr></th>
       <th><abbr title="update">Sửa</abbr></th>
-
     </tr>
     </thead>
 <?php  if ($result = $conn -> query($sql)) {
@@ -130,11 +122,7 @@
     </tr>
      <tr></tr>
   </tbody>
-
-
-
 <?php }}?>
-
 </table>
     
 

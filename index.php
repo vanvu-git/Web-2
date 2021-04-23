@@ -31,7 +31,7 @@
                 $user = mysqli_fetch_assoc($result);
                 session_start();
                 $_SESSION['user'] = $user;
-                header("Location: index.php");
+                header("Location:admin.php");
             }
             else 
                echo "Sai mật khẩu hoặc sai username";

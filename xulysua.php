@@ -7,7 +7,7 @@
     else
     {
    
-    $msp = $_GET["msp"];
+    $msp = $_POST["msp"];
     $idtl = $_POST["mtl"];
     $tsp = $_POST["ten"];
     $dg = $_POST["dg"];

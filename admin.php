@@ -1,7 +1,5 @@
 
-
 <html>
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -34,21 +32,14 @@ function myFunction(x) {
    <div id = "tn" >
      <?php require('topnav.php'); ?>
     </div>
+
    <div class="columns m-2">
     <div id = "lmn" class="column is-3">
-      
      <?php require('left_menu.php'); ?>
     </div>
-    
     
     <div class="column is-9">
       <?php include('content.php'); ?>
     </div>
-    
-
-  </div>
-    <footer style="background-color: black;">
-      
-    
 </body>
 </html>

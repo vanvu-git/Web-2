@@ -45,11 +45,11 @@
             <button class="delete" aria-label="close" onclick="myFunction('<?php echo $row['id']; ?>')"></button>
             </header>
             <section class="modal-card-body">
-                
+                <a   class="button is-primary" href="<?php echo 'xulytrangthai.php?st=1&idtk='.$row['id']?>">Mở khóa tài khoản</a>
+                <a   class="button is-danger" href="<?php echo 'xulytrangthai.php?st=0&idtk='.$row['id']?>">Khóa tài khoản</a>
             </section>
             <footer class="modal-card-foot">
-            <button class="button is-success">Save changes</button>
-            <button class="button" onclick="myFunction('<?php echo $row['id']; ?>')">Cancel</button>
+            <button class="button" onclick="myFunction('<?php echo $row['id']; ?>')">Đóng</button>
             </footer>
         </div>
         </div>

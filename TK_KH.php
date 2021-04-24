@@ -32,7 +32,7 @@
       <td><?php echo $row['username'];?></td>
       <td><?php echo $row['password'];?></td>
         <?php if($row['status']==0) {?>
-            <td><button class="button is-danger">Đã bị khóa</td>
+            <td><button class="button is-danger" onclick="myFunction('<?php echo $row['id']; ?>')">Đã bị khóa</td>
         <?php } 
         if($row['status']==1) {?>
         <td><button class="button is-primary" onclick="myFunction('<?php echo $row['id']; ?>')">Bình thường</td>
@@ -41,15 +41,15 @@
         <div class="modal-background"></div>
         <div class="modal-card">
             <header class="modal-card-head">
-            <p class="modal-card-title">Modal title</p>
-            <button class="delete" aria-label="close"></button>
+            <p class="modal-card-title">Đổi trạng thái</p>
+            <button class="delete" aria-label="close" onclick="myFunction('<?php echo $row['id']; ?>')"></button>
             </header>
             <section class="modal-card-body">
-            <!-- Content ... -->
+                
             </section>
             <footer class="modal-card-foot">
             <button class="button is-success">Save changes</button>
-            <button class="button">Cancel</button>
+            <button class="button" onclick="myFunction('<?php echo $row['id']; ?>')">Cancel</button>
             </footer>
         </div>
         </div>

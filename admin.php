@@ -21,14 +21,7 @@ function myFunction(x) {
         classes.push("is-active");
         element.className = classes.join(" "); 
     }
-}
-function add_ctpn(x) {
-  
-
-
-    
-}
-  
+}  
 </script>
 </head>
 <body>

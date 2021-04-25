@@ -1,4 +1,3 @@
-
 <html>
 <head>
     <meta charset="UTF-8">
@@ -22,7 +21,19 @@ function myFunction(x) {
         classes.push("is-active");
         element.className = classes.join(" "); 
     }
-  }
+}
+function add_ctpn(x) {
+  var id = document.getElementById("idsp").value;
+  var sl = document.getElementById("sl").value;
+<?php 
+  $id = document.getElementById("sl").value;
+ $sql ="INSERT INTO `ct_phieunhaphang`(`id_phieunhaphang`, `id_sanpham`, `soluong`, `dongia`, `thanhtien`)
+             VALUES )"
+
+?>
+
+    
+}
   
 </script>
 </head>

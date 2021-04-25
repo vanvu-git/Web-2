@@ -10,10 +10,10 @@ class connect
     protected $conn;
 
     function __construct($host,$username,$password,$db){
-    $this->host = $_ENV['mysql_host'];
-            $this->username = $_ENV['mysql_username'] ;
-            $this->password = $_ENV['mysql_password'] ;
-            $this->db = $_ENV['mysql_database'] ;      
+            $this->host = $host;
+            $this->username = $username ;
+            $this->password = $password ;
+            $this->db = $db;      
             $this->connect();
         }
     
@@ -27,7 +27,7 @@ class connect
             $this->connect();
             $sql = "SELECT * FROM ".$table." WHERE ".$where;          
             $sql = $this->conn->query($sql);
-            $sql = $sql->fetch_assoc();
+           
             return $sql;
     }
     function updateData($table, $update_value, $where){

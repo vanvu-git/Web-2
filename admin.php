@@ -23,14 +23,8 @@ function myFunction(x) {
     }
 }
 function add_ctpn(x) {
-  var id = document.getElementById("idsp").value;
-  var sl = document.getElementById("sl").value;
-<?php 
-  $id = document.getElementById("sl").value;
- $sql ="INSERT INTO `ct_phieunhaphang`(`id_phieunhaphang`, `id_sanpham`, `soluong`, `dongia`, `thanhtien`)
-             VALUES )"
+  
 
-?>
 
     
 }

@@ -9,5 +9,6 @@ if(isset($_GET['id']))
 	else	if($id == "fix") 	include('sua.php');
 	else 	if($id == "dh")     include('donhang.php');
 	else 	if($id == "tkkh")     include('TK_KH.php');
+	else 	if($id == "pnh")     include('phieunhap.php');
 }
 ?>

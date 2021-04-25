@@ -1,5 +1,5 @@
 <?php
-
+include "connect.php"
 $conn = new  mysqli("localhost", "root","","console-beta");
 
 $sql = "SELECT * FROM sanpham";

@@ -9,13 +9,14 @@ class connect
     protected $db;
     protected $conn;
 
-    function __construct(){
+    function __construct($host,$username,$password,$db){
     $this->host = $_ENV['mysql_host'];
             $this->username = $_ENV['mysql_username'] ;
             $this->password = $_ENV['mysql_password'] ;
             $this->db = $_ENV['mysql_database'] ;      
             $this->connect();
         }
+    
     private function connect(){
             $this->conn = new mysqli($this->host, $this->username, $this->password, $this->db);
             if ($this->conn->connect_error) {

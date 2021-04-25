@@ -31,11 +31,64 @@
       <td><?php echo $row['id_nhanvien'];?></td>
       <td><?php echo $row['id_nhacungcap'];?></td>
       <td class="column" style="color:#ff0505;font-family: Arial, Helvetica, sans-serif;font-weight:bold;"><?php echo number_format($row['tongtien']).'đ';?></td>
-      <td><button class="button is-primary" onclick="myFunction('<?php echo $row['id']; ?>')">Chi tiết</button></td>
+      <td><button class="button is-primary" onclick="myFunction('ct<?php echo $row['id']; ?>')">Chi tiết</button></td>
       <td><?php echo $row['ngaynhap'];?></td>
         <?php if($row['status']==0) {?>
             <td><button class="button is-danger" onclick="myFunction('<?php echo $row['id']; ?>')">Chưa duyệt</button></td>
+            <td><button class="button is-link" type="button" onclick="myFunction('sp<?php echo $row['id'];?>')">Chọn sản phẩm</button></td>
+        <div class="modal" id="sp<?php echo $row['id'];?>">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+            <p class="modal-card-title">Thêm sản phẩm</p>
+            <button class="delete" type="button" onclick="myFunction('sp<?php echo $row['id'];?>')" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+            <form action="xulythempn.php?idpn=<?php echo $row['id'];?>" method="POST">
+            <div class="field">
+                    <label for="" class="label">ID sản phẩm:</label>
+                    <div class="select">
+                        <select id="idsp" name="idsp">
+                            <?php  
+                              
+                                $sql_1 = "SELECT `id` FROM  sanpham";
+                                if ($result_1 = $conn -> query($sql_1)) {
+                                    while ($row_1 = $result_1 -> fetch_array()) {
+                            ?>
+                            <option><?php echo $row_1['id']; ?></option>
+                            <?php }} ?>
+                        </select>
+                    </div>
+                    <div id="showNameError" class="has-text-danger"></div>
+            </div>
+            
+            <div class="field">
+                    <label for="" class="label">Số lượng:</label>
+                    <div class="control">
+                        <input type="text" class="input" name="sl" id="sl">
+                    </div>
+                    <div id="showNameError" class="has-text-danger"></div>
+            </div>
+            <div class="field">
+                <label for="" class="label">Đơn gíá:</label>
+                <div class="control">
+                    <input type="text" class="input" name="dg" Value="2000">
+                </div>
+                <div id="showNameError" class="has-text-danger"></div>
+            </div>
+            <input type="submit" class="button is-danger" value="thêm">
+            </form>
+            </section>
+            <footer class="modal-card-foot">
+           
+            <button class="button" type="button" onclick="myFunction('sp<?php echo $row['id'];?>')">Đóng</button>
+            </footer>
+        </div>
+        </div>
         <?php } 
+
+
+
         if($row['status']==1) {?>
         <td><button class="button is-primary" onclick="myFunction('<?php echo $row['id']; ?>')">Đã duyệt</button></td>
         <?php } ?>

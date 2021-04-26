@@ -1,5 +1,3 @@
-
-
 <nav class="columns has-text-centered">
     <div class="column is-12 has-text-weight-bold mt-4" style="background-color:#39d6db;">
         <div  style="color:white;">Tạo phiếu nhập hàng</div>
@@ -23,7 +21,4 @@
             </div>
             <div id="showNameError" class="has-text-danger"></div>
         </div>
-
-        
-       
 </form>

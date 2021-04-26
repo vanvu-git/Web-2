@@ -11,5 +11,6 @@ if(isset($_GET['id']))
 	else if($id == "tkkh")     include('TK_KH.php');
 	else if($id == "pnh")     include('phieunhap.php');
 	else if($id == "ycnh")     include('yeucaunhaphang.php');
+	else if($id == "home")     include('home.php');
 }
 ?>

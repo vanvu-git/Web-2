@@ -18,5 +18,5 @@
     echo $sql;
     mysqli_query($conn,$sql);
     mysqli_close($conn);
-   // header("location:admin.php?id=pnh");
+    header("location:admin.php?id=pnh");
 ?>

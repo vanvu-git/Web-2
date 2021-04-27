@@ -17,12 +17,12 @@
     </tr>
 </thead>
 <?php
-    $conn = new  mysqli("localhost", "root","","console-beta");
+    $conn = new  MyConn("localhost", "root","","console-beta");
 
     $sql = "SELECT * FROM phieunhaphang";
-    if ($result = $conn -> query($sql)) {
+    if ($pn = $conn->executeQuery($sql)) {
         
-  while ($row = $result -> fetch_array()) {
+  foreach($pn as $row) {
 ?>
 <tbody>
     <tr>
@@ -47,8 +47,8 @@
                     </div>
                     <?php $sql_1 ="SELECT * FROM phieunhaphang,ct_phieunhaphang WHERE phieunhaphang.id=ct_phieunhaphang.id_phieunhaphang AND  phieunhaphang.id='$row[id]'";
                        
-                     if ($rs = $conn -> query($sql_1)) {                       
-                      while ($r = $rs -> fetch_array())  {?>
+                     if ($rs = $conn -> executeQuery($sql_1)) {                       
+                      foreach ( $rs as $r)  {?>
                     <div class="columns is-multiline is-mobile">
                       <div class="column is-3-mobile is-3-desktop"><?php echo $r['id_sanpham'];?></div>
                       <div class="column is-3-mobile is-3-desktop"><?php echo $r['soluong'];?></div>
@@ -73,10 +73,26 @@
       <td><?php echo $row['ngaynhap'];?></td>
         <?php if($row['status']==0) {?>
             <td><button class="button is-danger" onclick="myFunction('<?php echo $row['id']; ?>')">Chưa duyệt</button></td>
+            <div class="modal is-acti" id="<?php echo $row['id']; ?>">
+            <div class="modal-background"></div>
+            <div class="modal-card">
+            <header class="modal-card-head">
+            <p class="modal-card-title">Đổi trạng thái</p>
+            <button class="delete" aria-label="close" onclick="myFunction('<?php echo $row['id']; ?>')"></button>
+            </header>
+            <section class="modal-card-body">
+                <a class="button is-primary" href="<?php echo 'xulyphieunhap.php?st=1&idpn='.$row['id']?>">Duyệt phiếu nhập</a>
+                <a class="button is-danger" href="<?php echo 'xulyphieunhap.php?st=0&idpn='.$row['id']?>">Chưa duyệt phiếu nhập</a>
+            </section>
+            <footer class="modal-card-foot">
+            <button class="button" onclick="myFunction('<?php echo $row['id']; ?>')">Đóng</button>
+            </footer>
+            </div>
+            </div>
             <td><button class="button is-link" type="button" onclick="myFunction('sp<?php echo $row['id'];?>')">Chọn sản phẩm</button></td>
-        <div class="modal" id="sp<?php echo $row['id'];?>">
-        <div class="modal-background"></div>
-        <div class="modal-card">
+            <div class="modal" id="sp<?php echo $row['id'];?>">
+            <div class="modal-background"></div>
+            <div class="modal-card">
             <header class="modal-card-head">
             <p class="modal-card-title">Thêm sản phẩm</p>
             <button class="delete" type="button" onclick="myFunction('sp<?php echo $row['id'];?>')" aria-label="close"></button>
@@ -129,7 +145,7 @@
         if($row['status']==1) {?>
         <td><button class="button is-primary" onclick="myFunction('<?php echo $row['id']; ?>')">Đã duyệt</button></td>
         <?php } ?>
-        <div class="modal" id="<?php echo $row['id']; ?>">
+        <div class="modal is-acti" id="<?php echo $row['id']; ?>">
         <div class="modal-background"></div>
         <div class="modal-card">
             <header class="modal-card-head">

@@ -1,25 +1,36 @@
 <?php 
-    $conn = new mysqli("localhost","root","","console-beta");
-    $sql = "SELECT COUNT(id) FROM sanpham";
+    $conn = new MyConn("localhost","root","","console-beta");
+    $sql = "SELECT COUNT(id) AS 'tong' FROM sanpham";
 
-    $rs = $conn -> query($sql);
-    $sp = $rs -> fetch_array();
+   
+    $rs = $conn->executeQuery($sql);
+    foreach($rs as $r)
+    {
+        $sp = $r ;
+    }
+    $sql = "SELECT COUNT(id) AS 'tong' FROM khachhang ";
 
-    $sql = "SELECT COUNT(id) FROM khachhang";
+    $rs = $conn->executeQuery($sql);
+    foreach($rs as $r)
+    {
+        $kh = $r ;
+    }
+    $sql = "SELECT COUNT(id) AS 'tong' FROM hoadon";
 
-    $rs = $conn -> query($sql);
-    $kh = $rs -> fetch_array();
+    $rs = $conn->executeQuery($sql);
+    foreach($rs as $r)
+    {
+        $dh = $r ;
+    }
 
-    $sql = "SELECT COUNT(id) FROM hoadon";
+    $sql = "SELECT COUNT(id) AS 'tong' FROM phieunhaphang";
 
-    $rs = $conn -> query($sql);
-    $dh = $rs -> fetch_array();
-
-    $sql = "SELECT COUNT(id) FROM phieunhaphang";
-
-    $rs = $conn -> query($sql);
-    $pn = $rs -> fetch_array();
-    mysqli_close($conn);
+    $rs = $conn->executeQuery($sql);
+    foreach($rs as $r)
+    {
+     $pn = $r ;
+    }
+  
   
 ?>
 <div class="columns is-multiline is-mobile mt-5">
@@ -29,7 +40,7 @@
             <a href="admin.php?id=sp" class="bigger-when-hover">
                 <img src="../images/shopping-cart.png" alt="" class="image is-128x128">
                 <h4 class="is-size-4 has-text-centered">Sản phẩm</h4>
-                <p class="has-text-danger is-size-5 has-text-centered has-text-weight-semibold">Số lượng: <?php echo $sp[0]; ?></p>
+                <p class="has-text-danger is-size-5 has-text-centered has-text-weight-semibold">Số lượng: <?php echo $sp['tong']; ?></p>
             </a>
             </div>
         </div>
@@ -39,7 +50,7 @@
             <a href="admin.php?id=dh" class="bigger-when-hover">
                 <img src="../images/invoices.png" alt="" class="image is-128x128">
                 <h4 class="is-size-4 has-text-centered">Đơn hàng</h4>
-                <p class="has-text-danger is-size-5 has-text-centered has-text-weight-semibold">Số lượng: <?php echo $dh[0]; ?></p>
+                <p class="has-text-danger is-size-5 has-text-centered has-text-weight-semibold">Số lượng: <?php echo $dh['tong']; ?></p>
             </a>
             </div>
         </div>
@@ -49,7 +60,7 @@
             <a href="admin.php?id=tkkh" class="bigger-when-hover">
                 <img src="../images/man-user.png" alt="" class="image is-128x128">
                 <h4 class="is-size-4 has-text-centered">Khách hàng</h4>
-                <p class="has-text-danger is-size-5 has-text-centered has-text-weight-semibold">Số lượng: <?php echo $kh[0] ; ?></p>
+                <p class="has-text-danger is-size-5 has-text-centered has-text-weight-semibold">Số lượng: <?php echo $kh['tong']; ?></p>
             </a>
             </div>
         </div>
@@ -59,7 +70,7 @@
             <a href="admin.php?id=pnh" class="bigger-when-hover">
                 <img src="../images/home.png" alt="" class="image is-128x128">
                 <h4 class="is-size-4 has-text-centered">Phiếu nhập hàng</h4>
-                <p class="has-text-danger is-size-5 has-text-centered has-text-weight-semibold">Số lượng: <?php echo $pn[0]; ?></p>             
+                <p class="has-text-danger is-size-5 has-text-centered has-text-weight-semibold">Số lượng: <?php echo $pn['tong']; ?></p>             
             </a>
             </div>
         </div>

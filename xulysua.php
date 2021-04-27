@@ -1,5 +1,6 @@
 <?php
-    $conn = new mysqli("localhost","root","","console-beta");
+include ('../template/connection.php');
+    $conn = new Myconn("localhost","root","","console-beta");
     if(!$conn)
     {
         echo"ket noi that bai";
@@ -15,8 +16,8 @@
     $src="images/" . $_FILES["file"]["name"];
 $sql = "UPDATE `sanpham` SET `id_theloai`='$idtl',`ten`='$tsp',`dongia`='$dg',`image_link`='$src',`Soluong`='$sl' WHERE id='$msp'";
 echo $sql;
-mysqli_query($conn,$sql);
-mysqli_Close($conn);
+$conn->updateQuery($sql);
+$conn->Close();
 header("location:admin.php?id=sp&act=sp");
 }
 ?>

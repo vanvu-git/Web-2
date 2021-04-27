@@ -33,7 +33,8 @@
 </div>
 
 <?php
-    $conn = new  mysqli("localhost", "root","","console-beta");
+    $conn = new MyConn("localhost","root","","console-beta");
+
     if(isset($_GET['start']) && isset($_GET['end']))
     {
       $sql = "SELECT * FROM hoadon WHERE thoigian BETWEEN '$_GET[start]' AND '$_GET[end]'";
@@ -55,9 +56,11 @@
     </tr>
   </thead>
    
-<?php  if ($result = $conn -> query($sql)) {
-            $stt = 1;
-      while ($row = $result -> fetch_array())  { ?>
+<?php  
+  $stt = 1;
+  $donhang = $conn->executeQuery($sql);
+  foreach($donhang as $row) { 
+?>
 
 
 <tbody>
@@ -85,8 +88,8 @@
                       <div class="column is-3-mobile is-3-desktop has-text-weight-bold">Thành tiền</div>
                     </div>
                     <?php $sql_1 ="SELECT sanpham.ten,ct_hoadon.soluong,sanpham.dongia,ct_hoadon.dongia*ct_hoadon.soluong AS thanhtien FROM hoadon,ct_hoadon,sanpham WHERE hoadon.id=ct_hoadon.id_hoadon AND sanpham.id=ct_hoadon.id_sanpham AND ct_hoadon.id_hoadon=$row[id]";
-                      if ($rs = $conn -> query($sql_1)) {                       
-                      while ($r = $rs -> fetch_array())  {?>
+                      if ($rs = $conn -> executeQuery($sql_1)) {                       
+                      foreach ( $rs as $r)  {?>
                     <div class="columns is-multiline is-mobile">
                       <div class="column is-3-mobile is-3-desktop"><?php echo $r['ten'];?></div>
                       <div class="column is-3-mobile is-3-desktop"><?php echo $r['soluong'];?></div>
@@ -136,7 +139,7 @@
 
 
 
-<?php }}?>
+<?php }?>
 
 </table>
     

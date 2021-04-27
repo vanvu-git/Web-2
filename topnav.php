@@ -1,9 +1,4 @@
-<?php 
-    $user = null;
-    session_start();
-    if(isset($_SESSION['user']))
-        $user = $_SESSION['user'];
-?>
+
 
 
 <nav class="navbar" role="navigation" aria-label="main navigation" style=" background-color: #020203;"> 

@@ -1,10 +1,13 @@
 <?php
 
-$conn = new  mysqli("localhost", "root","","console-beta");
+$conn = new  MyConn("localhost", "root","","console-beta");
 
-$sql = "SELECT COUNT(id) FROM sanpham";
-$result = mysqli_query($conn,$sql);
-$count = $result -> fetch_array();
+$sql = "SELECT COUNT(id) AS 'tong' FROM sanpham";
+$result = $conn->executeQuery($sql);
+foreach($result as $rs)
+{
+  $count = $rs;
+}
 
 
 { ?>
@@ -30,7 +33,7 @@ $count = $result -> fetch_array();
 
 <nav class="pagination" role="navigation" aria-label="pagination">
   <ul class="pagination-list">
-  <?php for($i = 0; $i < ceil($count[0]/ 5); $i++)
+  <?php for($i = 0; $i < ceil($count['tong']/ 5); $i++)
     {  ?>
     <li>
       <a class="pagination-link is-current" href="admin.php?id=sp&trang=<?php echo $i ; ?>" aria-label="Page 1"><?php echo $i+1  ;?></a>

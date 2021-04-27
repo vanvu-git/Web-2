@@ -17,12 +17,12 @@
     </tr>
 </thead>
 <?php
-    $conn = new  mysqli("localhost", "root","","console-beta");
+    $conn = new  MyConn("localhost", "root","","console-beta");
 
     $sql = "SELECT `id`,`ho`,`ten`,`username`,`password`,`status` FROM khachhang";
-    if ($result = $conn -> query($sql)) {
+    if ($result = $conn -> executeQuery($sql)) {
         
-  while ($row = $result -> fetch_array()) {
+  foreach ($result as $row) {
 ?>
 <tbody>
     <tr>

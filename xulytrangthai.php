@@ -1,9 +1,10 @@
 <?php
+include ('../template/connection.php');
     $user = null;
     session_start();
     if(isset($_SESSION['user']))
         $user = $_SESSION['user'];
-    $conn = new mysqli("localhost","root","","console-beta");
+    $conn = new Myconn("localhost","root","","console-beta");
     if(!$conn)
     {
         echo"ket noi that bai";
@@ -15,7 +16,7 @@ $sql = "UPDATE khachhang SET `status`=$st  WHERE id = $idtk";
 
 echo $sql;
 
-mysqli_query($conn,$sql);
+$conn->updateQuery($sql);
 
 header("location:admin.php?id=tkkh");
     }

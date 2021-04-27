@@ -1,3 +1,10 @@
+<?php  include ('../template/connection.php'); 
+
+    $user = null;
+    session_start();
+    if(isset($_SESSION['user']))
+        $user = $_SESSION['user'];
+?>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -26,7 +33,7 @@ function myFunction(x) {
 </head>
 <body>
       
-    
+    <?php if(isset($_SESSION['user'])) { ?> 
    <div id = "tn" >
      <?php require('topnav.php'); ?>
     </div>
@@ -39,5 +46,7 @@ function myFunction(x) {
     <div class="column is-9">
       <?php include('content.php'); ?>
     </div>
+    <?php } else echo "ERROR"; ?>
+
 </body>
 </html>

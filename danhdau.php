@@ -1,9 +1,10 @@
 <?php
+    include ('../template/connection.php');
     $user = null;
     session_start();
     if(isset($_SESSION['user']))
         $user = $_SESSION['user'];
-    $conn = new mysqli("localhost","root","","console-beta");
+    $conn = new MyConn("localhost","root","","console-beta");
     if(!$conn)
     {
         echo"ket noi that bai";
@@ -12,10 +13,9 @@
     { $idhd = $_GET['idhd'];
         $st = $_GET['st'] ;
 $sql = "UPDATE hoadon SET `status`=$st ,`id_nhanvien` = '$user[id]' WHERE id = $idhd";
-
+$conn->updateQuery($sql);
 echo $sql;
 
-mysqli_query($conn,$sql);
 
 header("location:admin.php?id=dh&act=dh");
     }

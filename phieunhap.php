@@ -4,7 +4,6 @@
         <div  style="color:white;">Phiếu nhập hàng</div>
     </div>
 </nav>
-
 <table class="table">
 <thead>
     <tr>  
@@ -99,8 +98,7 @@
                         </select>
                     </div>
                     <div id="showNameError" class="has-text-danger"></div>
-            </div>
-            
+            </div>            
             <div class="field">
                     <label for="" class="label">Số lượng:</label>
                     <div class="control">

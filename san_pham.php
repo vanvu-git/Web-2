@@ -2,7 +2,7 @@
 
 $conn = new  mysqli("localhost", "root","","console-beta");
 
-$sql = "SELECT * FROM sanpham";
+
 { ?>
   <nav class="columns has-text-centered">
         <div class="column is-3 has-background-black has-text-weight-bold">

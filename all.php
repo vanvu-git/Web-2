@@ -88,7 +88,11 @@
       <th><abbr title="update">Sửa</abbr></th>
     </tr>
     </thead>
-<?php  if ($result = $conn -> query($sql)) {
+<?php   
+    $trang = $_GET['trang'];
+    $begin = $trang * 5;
+    $sql = "SELECT * FROM sanpham WHERE 1 LIMIT $begin,5";
+    if ($result = $conn -> query($sql)) {
             $stt = 1;
       while ($row = $result -> fetch_array())  { ?>
 <tbody>

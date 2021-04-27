@@ -32,6 +32,45 @@
       <td><?php echo $row['id_nhacungcap'];?></td>
       <td class="column" style="color:#ff0505;font-family: Arial, Helvetica, sans-serif;font-weight:bold;"><?php echo number_format($row['tongtien']).'đ';?></td>
       <td><button class="button is-primary" onclick="myFunction('ct<?php echo $row['id']; ?>')">Chi tiết</button></td>
+      <div class="modal" id="ct<?php echo $row['id'];?>">
+                <div class="modal-background"></div>
+                <div class="modal-card">
+                    <header class="modal-card-head has-background-primary">
+                    <p class="modal-card-title">Chi tiết đơn hàng</p>
+                    <button class="delete" onclick="myFunction('ct<?php echo $row['id'];?>')" aria-label="close"></button>
+                    </header>
+                    <section class="modal-card-body">
+                    <div class="columns is-multiline is-mobile">
+                      <div class="column is-3-mobile is-3-desktop has-text-weight-bold">ID sản phẩm</div>
+                      <div class="column is-3-mobile is-3-desktop has-text-weight-bold">Số lượng</div>
+                      <div class="column is-3-mobile is-3-desktop has-text-weight-bold">Đơn giá</div>
+                      <div class="column is-3-mobile is-3-desktop has-text-weight-bold">Thành tiền</div>
+                    </div>
+                    <?php $sql_1 ="SELECT * FROM phieunhaphang,ct_phieunhaphang WHERE phieunhaphang.id=ct_phieunhaphang.id_phieunhaphang AND  phieunhaphang.id='$row[id]'";
+                       
+                     if ($rs = $conn -> query($sql_1)) {                       
+                      while ($r = $rs -> fetch_array())  {?>
+                    <div class="columns is-multiline is-mobile">
+                      <div class="column is-3-mobile is-3-desktop"><?php echo $r['id_sanpham'];?></div>
+                      <div class="column is-3-mobile is-3-desktop"><?php echo $r['soluong'];?></div>
+                      <div class="column is-3-mobile is-3-desktop"><?php echo $r['dongia'];?></div>
+                      <div class="column is-3-mobile is-3-desktop"><?php echo $r['thanhtien'];?></div>
+                    </div>
+                    <?php }}?>
+                    <div class="columns is-multiline is-mobile">
+                      <div class="column"></div>
+                      <div class="column"></div>
+                      <div class="column has-text-weight-bold">Tổng tiền:</div>
+                      <div class="column" style="color:#ff0505;font-family: Arial, Helvetica, sans-serif;font-weight:bold;"><?php echo number_format($row['tongtien']).'đ';?></div>
+                    </div>
+                    </section>                    
+                    <footer class="modal-card-foot">                   
+                    <button class="button" onclick="myFunction('ct<?php echo $row['id'];?>')">Đóng</button>
+                    </footer>
+                </div>
+        </div>
+
+
       <td><?php echo $row['ngaynhap'];?></td>
         <?php if($row['status']==0) {?>
             <td><button class="button is-danger" onclick="myFunction('<?php echo $row['id']; ?>')">Chưa duyệt</button></td>

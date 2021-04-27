@@ -1,6 +1,6 @@
 <?php
-include ('../template/connection.php');
-    $conn = new Myconn("localhost","root","","console-beta");
+include ('../template/mysqlconnection.php'); 
+    $conn = new mysqlconnection("localhost","root","","console-beta");
     if(!$conn)
     {
         echo"ket noi that bai";
@@ -23,8 +23,8 @@ include ('../template/connection.php');
     $sql = "UPDATE `sanpham` SET `id_theloai`='$idtl',`ten`='$tsp',`dongia`='$dg',`image_link`='$src',`Soluong`='$sl' WHERE id='$msp'";
     }
     echo $sql;
-$conn->updateQuery($sql);
-$conn->Close();
+$conn->executeUpdate($sql);
+
 header("location:admin.php?id=sp&act=sp");
 }
 ?>

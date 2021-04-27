@@ -10,6 +10,7 @@
 
 <body>
 <?php 
+  include ('../template/mysqlconnection.php'); 
     $loi = '';
     if(isset($_POST['submit'])){
         if(isset($_POST['username'])){
@@ -18,7 +19,7 @@
             $username = $_POST['username'];
             $password = $_POST['password'];
 
-            $conn = mysqli_connect('localhost', 'root', '', 'console-beta');
+            $conn = new mysqlconnection("localhost", "root", "", "console-beta");
 
         
             if(!$conn){
@@ -28,7 +29,7 @@
             
             $sql = "select * from nhanvien where username = '$username' and password = '$password'";
             echo $sql;
-            $result = mysqli_query($conn, $sql);
+            $result = $conn->executeQuery($sql);
             if(mysqli_num_rows($result) > 0){
                 $account = mysqli_fetch_assoc($result);
                 session_start();

@@ -17,7 +17,7 @@
     </tr>
 </thead>
 <?php
-    $conn = new  MyConn("localhost", "root","","console-beta");
+    $conn = new  mysqlconnection("localhost", "root","","console-beta");
 
     $sql = "SELECT * FROM phieunhaphang";
     if ($pn = $conn->executeQuery($sql)) {

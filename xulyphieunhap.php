@@ -1,10 +1,10 @@
 <?php
-include ('../template/connection.php');
+include ('../template/mysqlconnection.php'); 
     $account = null;
     session_start();
     if(isset($_SESSION['account']))
         $account = $_SESSION['account'];
-    $conn = new MyConn("localhost","root","","console-beta");
+    $conn = new mysqlconnection("localhost","root","","console-beta");
     if(!$conn)
     {
         echo"ket noi that bai";
@@ -16,7 +16,7 @@ $sql = "UPDATE phieunhaphang SET `status`=$st  WHERE id = '$idpn'";
 
 echo $sql;
 
-$conn->updateQuery($sql);   
+$conn->executeUpdate($sql);   
 
 header("location:admin.php?id=pnh");
     }

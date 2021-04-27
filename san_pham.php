@@ -1,6 +1,6 @@
 <?php
 
-$conn = new  MyConn("localhost", "root","","console-beta");
+$conn = new  mysqlconnection("localhost", "root","","console-beta");
 
 $sql = "SELECT COUNT(id) AS 'tong' FROM sanpham";
 $result = $conn->executeQuery($sql);

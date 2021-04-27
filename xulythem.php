@@ -1,11 +1,11 @@
 <?php
-include ('../template/connection.php');
+include ('../template/mysqlconnection.php'); 
     $idsp = $_POST["msp"];
     $idtl = $_POST["mtl"];
     $tsp = $_POST["ten"];
     $dg = $_POST["dg"];
     $sl = $_POST["sl"];
-    $conn = new Myconn("localhost","root","","console-beta");
+    $conn = new mysqlconnection("localhost","root","","console-beta");
     if(!$conn)
     {
         echo"ket noi that bai";
@@ -14,7 +14,7 @@ include ('../template/connection.php');
     $sql = "INSERT INTO `sanpham`(`id`, `id_theloai`, `ten`,`dongia`, `image_link`, `Soluong`)
      VALUES ( '$idsp' , '$idtl' , '$tsp' , '$dg' , '$src', '$sl')";
     echo $sql;
-    $conn->updateQuery($sql);
+    $conn->executeUpdate($sql);
  
     if($_FILES["file"]["error"]>0)
     {

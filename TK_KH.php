@@ -17,7 +17,7 @@
     </tr>
 </thead>
 <?php
-    $conn = new  MyConn("localhost", "root","","console-beta");
+    $conn = new  mysqlconnection("localhost", "root","","console-beta");
 
     $sql = "SELECT `id`,`ho`,`ten`,`username`,`password`,`status` FROM khachhang";
     if ($result = $conn -> executeQuery($sql)) {

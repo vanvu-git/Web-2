@@ -1,4 +1,4 @@
-<?php  include ('../template/connection.php'); 
+<?php  include ('../template/mysqlconnection.php'); 
 
     $account = null;
     session_start();

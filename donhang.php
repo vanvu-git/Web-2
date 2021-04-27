@@ -33,7 +33,7 @@
 </div>
 
 <?php
-    $conn = new MyConn("localhost","root","","console-beta");
+    $conn = new mysqlconnection("localhost","root","","console-beta");
 
     if(isset($_GET['start']) && isset($_GET['end']))
     {
@@ -58,8 +58,10 @@
    
 <?php  
   $stt = 1;
-  $donhang = $conn->executeQuery($sql);
-  foreach($donhang as $row) { 
+  $result = $conn->executeQuery($sql);
+  
+  
+  foreach($result as $row) { 
 ?>
 
 

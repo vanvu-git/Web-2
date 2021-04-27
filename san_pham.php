@@ -2,6 +2,10 @@
 
 $conn = new  mysqli("localhost", "root","","console-beta");
 
+$sql = "SELECT COUNT(id) FROM sanpham";
+$result = mysqli_query($conn,$sql);
+$count = $result -> fetch_array();
+
 
 { ?>
   <nav class="columns has-text-centered">
@@ -22,3 +26,15 @@ $conn = new  mysqli("localhost", "root","","console-beta");
     </nav>
     <?php include('sp_side.php'); ?>
 <?php  }?>
+
+
+<nav class="pagination" role="navigation" aria-label="pagination">
+  <ul class="pagination-list">
+  <?php for($i = 0; $i < ceil($count[0]/ 5); $i++)
+    {  ?>
+    <li>
+      <a class="pagination-link is-current" href="admin.php?id=sp&trang=<?php echo $i ; ?>" aria-label="Page 1"><?php echo $i+1  ;?></a>
+    </li>
+    <?php }?>
+  </ul>
+</nav>

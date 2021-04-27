@@ -14,7 +14,7 @@
   </div>     
   <div class="navbar-end">
       <div class="navbar-item">
-      <a  class="has-text-primary-dark is-size-5"><?php if($user != null) echo htmlspecialchars($user['username']);?></a>
+      <a  class="has-text-primary-dark is-size-5"><?php if($account != null) echo htmlspecialchars($account['username']);?></a>
      
       </div>
     </div>

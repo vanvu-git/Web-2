@@ -1,9 +1,9 @@
 <?php  include ('../template/connection.php'); 
 
-    $user = null;
+    $account = null;
     session_start();
-    if(isset($_SESSION['user']))
-        $user = $_SESSION['user'];
+    if(isset($_SESSION['account']))
+        $account = $_SESSION['account'];
 ?>
 <html>
 <head>
@@ -33,7 +33,7 @@ function myFunction(x) {
 </head>
 <body>
       
-    <?php if(isset($_SESSION['user'])) { ?> 
+    <?php if(isset($_SESSION['account'])) { ?> 
    <div id = "tn" >
      <?php require('topnav.php'); ?>
     </div>

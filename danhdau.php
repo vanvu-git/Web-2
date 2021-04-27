@@ -1,9 +1,9 @@
 <?php
     include ('../template/connection.php');
-    $user = null;
+    $account = null;
     session_start();
-    if(isset($_SESSION['user']))
-        $user = $_SESSION['user'];
+    if(isset($_SESSION['account']))
+        $account = $_SESSION['account'];
     $conn = new MyConn("localhost","root","","console-beta");
     if(!$conn)
     {
@@ -12,7 +12,7 @@
     else
     { $idhd = $_GET['idhd'];
         $st = $_GET['st'] ;
-$sql = "UPDATE hoadon SET `status`=$st ,`id_nhanvien` = '$user[id]' WHERE id = $idhd";
+$sql = "UPDATE hoadon SET `status`=$st ,`id_nhanvien` = '$account[id]' WHERE id = $idhd";
 $conn->updateQuery($sql);
 echo $sql;
 

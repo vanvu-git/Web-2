@@ -30,9 +30,9 @@
             echo $sql;
             $result = mysqli_query($conn, $sql);
             if(mysqli_num_rows($result) > 0){
-                $user = mysqli_fetch_assoc($result);
+                $account = mysqli_fetch_assoc($result);
                 session_start();
-                $_SESSION['user'] = $user;
+                $_SESSION['account'] = $account;
                 header("Location:admin.php");
             }
             else 

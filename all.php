@@ -106,7 +106,7 @@
       <td><?php echo $row['ten'];?></td>
       <td><?php echo $row['dongia'];?></td>
       <td><?php echo $row['image_link'];?></td>
-      <td><?php echo $row['Soluong'];?></td>
+      <td><?php echo $row['soluong'];?></td>
       <td><button class="button is-danger" onclick="myFunction('<?php echo $row['id'];?>')">Xóa</button></td>
         <div class="modal" id="<?php echo $row['id'];?>">
                 <div class="modal-background"></div>
@@ -141,7 +141,7 @@
                       <div class="field">
                           <label for="" class="label">ID thể loại:</label>
                           <div class="control">
-                              <input type="text" class="input" name="mtl" value="" id="mtl">
+                              <input type="text" class="input" name="mtl" id="mtl" Value="<?php echo $row['id_theloai'];?>">
                           </div>    
                           <div id="showPasswordError" class="has-text-danger"></div>
                       </div>
@@ -149,7 +149,7 @@
                       <div class="field">
                           <label for="" class="label">Tên</label>
                           <div class="control">
-                              <input type="text" class="input" name="ten">
+                              <input type="text" class="input" name="ten" id="ten" Value="<?php echo $row['ten'];?>">
                           </div>
                           <div id="showNameError" class="has-text-danger"></div>
                       </div>
@@ -157,7 +157,7 @@
                       <div class="field">
                           <label for="" class="label">Đơn giá:</label>
                           <div class="control">
-                              <input type="text" class="input" name="dg">
+                              <input type="text" class="input" name="dg" id="dg"  Value="<?php echo $row['dongia'];?>">
                           </div>
                           <div id="showNameError" class="has-text-danger"></div>
                       </div>
@@ -165,7 +165,7 @@
                       <div class="field">
                         <label for="" class="label">Số lượng:</label>
                         <div class="control">
-                            <input type="text" class="input" name="sl">
+                            <input type="text" class="input" name="sl" id="sl"  Value="<?php echo $row['soluong'];?>">
                         </div>
                         <div id="showNameError" class="has-text-danger"></div>
                     </div>

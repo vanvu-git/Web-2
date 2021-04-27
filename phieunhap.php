@@ -106,8 +106,8 @@
                             <?php  
                               
                                 $sql_1 = "SELECT `id` FROM  sanpham";
-                                if ($result_1 = $conn -> query($sql_1)) {
-                                    while ($row_1 = $result_1 -> fetch_array()) {
+                                if ($result_1 = $conn -> executeQuery($sql_1)) {
+                                    foreach ($result_1 as $row_1) {
                             ?>
                             <option><?php echo $row_1['id']; ?></option>
                             <?php }} ?>
@@ -125,7 +125,7 @@
             <div class="field">
                 <label for="" class="label">Đơn gíá:</label>
                 <div class="control">
-                    <input type="text" class="input" name="dg" Value="2000">
+                    <input type="text" class="input" name="dg" Value="">
                 </div>
                 <div id="showNameError" class="has-text-danger"></div>
             </div>

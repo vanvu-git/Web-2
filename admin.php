@@ -1,5 +1,5 @@
-<?php  include ('../template/mysqlconnection.php'); 
-
+<?php  
+include ('../template/mysqlconnection.php'); 
     $account = null;
     session_start();
     if(isset($_SESSION['account']))

@@ -3,9 +3,8 @@
         <div  style="color:white;">Tạo phiếu nhập hàng</div>
     </div>
 </nav>
-<form action="xulysua.php" method="POST">
+<form action="taophieunhap.php" method="POST">
                 
-    <input type="text" class="is-hidden" name="msp" value="<?php echo $row['id'] ;?>">
         <div class="field">
             <label for="" class="label">ID:</label>
             <div class="control">
@@ -18,6 +17,12 @@
             <label for="" class="label">ID nhà cung cấp:</label>
             <div class="control">
                 <input type="text" class="input" name="ncc">
+            </div>
+            <div id="showNameError" class="has-text-danger"></div>
+        </div>
+        <div class="field">
+            <div class="control">
+                <input type="submit" class="button is-link" name="submit" value="Thêm">
             </div>
             <div id="showNameError" class="has-text-danger"></div>
         </div>

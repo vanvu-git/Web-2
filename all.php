@@ -74,6 +74,7 @@
               </footer>
           </div>
   </div>
+
 <table class="table">
   <thead>
     <tr>
@@ -93,8 +94,14 @@
     {
         $trang = $_GET['trang'];    
     } else $trang=0;
-        $begin = $trang * 5;
-    $sql = "SELECT * FROM sanpham WHERE 1 LIMIT $begin,5";
+    $begin = $trang * 3;
+    if(isset($_GET['tl']))
+    {
+        $tl = $_GET['tl'];    
+        $sql = "SELECT * FROM sanpham WHERE `id_theloai`='$tl' LIMIT $begin,3";
+    } 
+
+    else $sql = "SELECT * FROM sanpham WHERE 1 LIMIT $begin,3";
     if ($result = $conn -> executeQuery($sql)) {
             $stt = $begin+1;
     foreach($result as $row) { ?>

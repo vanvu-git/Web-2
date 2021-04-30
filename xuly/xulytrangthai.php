@@ -1,5 +1,5 @@
 <?php
-include ('../template/mysqlconnection.php'); 
+include ('../../template/mysqlconnection.php'); 
     $account = null;
     session_start();
     if(isset($_SESSION['account']))
@@ -18,6 +18,6 @@ echo $sql;
 
 $conn->executeUpdate($sql);
 
-header("location:admin.php?id=tkkh");
+header("location:../admin.php?id=tkkh");
     }
 ?>

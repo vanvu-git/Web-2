@@ -1,5 +1,5 @@
 <?php
-include ('../template/mysqlconnection.php'); 
+include ('../../template/mysqlconnection.php'); 
     $conn = new mysqlconnection("localhost","root","","console-beta");
     if(!$conn)
     {
@@ -25,6 +25,6 @@ include ('../template/mysqlconnection.php');
     echo $sql;
 $conn->executeUpdate($sql);
 
-header("location:admin.php?id=sp&act=sp");
+header("location:../admin.php?id=sp&act=sp");
 }
 ?>

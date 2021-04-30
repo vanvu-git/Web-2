@@ -1,5 +1,5 @@
 <?php
-include ('../template/mysqlconnection.php'); 
+include ('../../template/mysqlconnection.php'); 
     $idsp = $_POST["msp"];
     $idtl = $_POST["mtl"];
     $tsp = $_POST["ten"];
@@ -26,5 +26,5 @@ include ('../template/mysqlconnection.php');
         echo "file đã có rồi";
     }else  move_uploaded_file($_FILES["file"]["tmp_name"],"images/" . $_FILES["file"]["name"]);
     
-    header("location:admin.php?id=sp&act=sp");
+    header("location:../admin.php?id=sp&act=sp");
 ?>

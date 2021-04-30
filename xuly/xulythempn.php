@@ -1,5 +1,5 @@
 <?php
-include ('../template/mysqlconnection.php'); 
+include ('../../template/mysqlconnection.php'); 
     $idpn = $_GET["idpn"];
     $idsp = $_POST["idsp"];
     $sl = $_POST["sl"];
@@ -19,5 +19,5 @@ include ('../template/mysqlconnection.php');
     echo $sql;
     $conn->executeUpdate($sql);
   
-    header("location:admin.php?id=pnh");
+    header("location:../admin.php?id=pnh");
 ?>

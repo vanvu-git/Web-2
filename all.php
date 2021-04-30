@@ -7,7 +7,7 @@
               <button class="delete" onclick="myFunction('add')" aria-label="close"></button>
               </header>
               <section class="modal-card-body">
-              <form action="xulythem.php" method="POST"  name="them_sp" enctype= "multipart/form-data">
+              <form action="xuly/xulythem.php" method="POST"  name="them_sp" enctype= "multipart/form-data">
                     <h3 class="is-size-3 has-text-center">Thêm</h3>
                     <div class="field">
                         <label for="" class="label">Id:</label>
@@ -126,7 +126,7 @@
                         <h1>Bạn có muốn xóa sản phẩm này</h1>
                     </section>
                     <footer class="modal-card-foot">
-                    <a   class="button is-primary" href="<?php echo 'xulyxoa.php?idsp='.$row['id']?>">Xóa</a>
+                    <a   class="button is-primary" href="<?php echo 'xuly/xulyxoa.php?idsp='.$row['id']?>">Xóa</a>
                     <button class="button" onclick="myFunction('<?php echo $row['id'];?>')">Cancel</button>
                     </footer>
                 </div>
@@ -140,7 +140,7 @@
                     <button class="delete" onclick="myFunction('fix-<?php echo $row['id'];?>')" aria-label="close"></button>
                     </header>
                     <section class="modal-card-body">
-                    <form action="xulysua.php" method="POST"  name="them_sp" enctype= "multipart/form-data">
+                    <form action="xuly/xulysua.php" method="POST"  name="them_sp" enctype= "multipart/form-data">
                       
 
 

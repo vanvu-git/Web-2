@@ -46,7 +46,7 @@ function myFunction(x) {
     <div class="column is-9">
       <?php include('content.php'); ?>
     </div>
-    <?php } else echo "ERROR"; ?>
+    <?php } else header("location:index.php");?>
 
 </body>
 </html>

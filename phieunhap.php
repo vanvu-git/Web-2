@@ -81,8 +81,8 @@
             <button class="delete" aria-label="close" onclick="myFunction('<?php echo $row['id']; ?>')"></button>
             </header>
             <section class="modal-card-body">
-                <a class="button is-primary" href="<?php echo 'xulyphieunhap.php?st=1&idpn='.$row['id']?>">Duyệt phiếu nhập</a>
-                <a class="button is-danger" href="<?php echo 'xulyphieunhap.php?st=0&idpn='.$row['id']?>">Chưa duyệt phiếu nhập</a>
+                <a class="button is-primary" href="<?php echo 'xuly/xulyphieunhap.php?st=1&idpn='.$row['id']?>">Duyệt phiếu nhập</a>
+                <a class="button is-danger" href="<?php echo 'xuly/xulyphieunhap.php?st=0&idpn='.$row['id']?>">Chưa duyệt phiếu nhập</a>
             </section>
             <footer class="modal-card-foot">
             <button class="button" onclick="myFunction('<?php echo $row['id']; ?>')">Đóng</button>
@@ -98,7 +98,7 @@
             <button class="delete" type="button" onclick="myFunction('sp<?php echo $row['id'];?>')" aria-label="close"></button>
             </header>
             <section class="modal-card-body">
-            <form action="xulythempn.php?idpn=<?php echo $row['id'];?>" method="POST">
+            <form action="xuly/xulythempn.php?idpn=<?php echo $row['id'];?>" method="POST">
             <div class="field">
                     <label for="" class="label">ID sản phẩm:</label>
                     <div class="select">
@@ -153,8 +153,8 @@
             <button class="delete" aria-label="close" onclick="myFunction('<?php echo $row['id']; ?>')"></button>
             </header>
             <section class="modal-card-body">
-                <a class="button is-primary" href="<?php echo 'xulyphieunhap.php?st=1&idpn='.$row['id']?>">Duyệt phiếu nhập</a>
-                <a class="button is-danger" href="<?php echo 'xulyphieunhap.php?st=0&idpn='.$row['id']?>">Chưa duyệt phiếu nhập</a>
+                <a class="button is-primary" href="<?php echo 'xuly/xulyphieunhap.php?st=1&idpn='.$row['id']?>">Duyệt phiếu nhập</a>
+                <a class="button is-danger" href="<?php echo 'xuly/xulyphieunhap.php?st=0&idpn='.$row['id']?>">Chưa duyệt phiếu nhập</a>
             </section>
             <footer class="modal-card-foot">
             <button class="button" onclick="myFunction('<?php echo $row['id']; ?>')">Đóng</button>

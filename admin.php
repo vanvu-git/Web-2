@@ -45,7 +45,11 @@ function myFunction(x) {
     
     <div class="column is-9">
       <?php include('content.php'); ?>
+      <?php  echo substr_replace($_SERVER['REQUEST_URI'], '', 0, strlen($_SERVER['PHP_SELF']));
+               ?> <br>
+      <?php Echo $_SERVER["REQUEST_URI"]; ?>
     </div>
+    
     <?php } else header("location:index.php");?>
 
 </body>

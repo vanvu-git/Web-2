@@ -8,7 +8,7 @@
 <table class="table">
 <thead>
     <tr>  
-      <th>ID</th>
+      <th><a href="admin.php">ID</a></th>
       <th>Họ</th>
       <th>Tên</th>
       <th>Username</th>

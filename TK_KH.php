@@ -8,18 +8,33 @@
 <table class="table">
 <thead>
     <tr>  
-      <th><a href="admin.php">ID</a></th>
-      <th>Họ</th>
-      <th>Tên</th>
-      <th>Username</th>
-      <th>Password</th>
-      <th>Trạng thái</th>
+      <th><a href="admin.php?id=tkkh&sort=id">ID</a></th>
+      <th><a href="admin.php?id=tkkh&sort=ho">Họ</a></th>
+      <th><a href="admin.php?id=tkkh&sort=ten">Tên</a></th>
+      <th><a href="admin.php?id=tkkh&sort=username">Username</a></th>
+      <th><a href="admin.php?id=tkkh&sort=password">Password</a></th>
+      <th><a href="admin.php?id=tkkh&sort=status">Trạng thái</a></th>
     </tr>
 </thead>
 <?php
     $conn = new  mysqlconnection("localhost", "root","","console-beta");
+    $sql = "SELECT COUNT(id) AS 'tong' FROM khachhang";
+    $result = $conn->executeQuery($sql);
+    foreach($result as $rs)
+    {
+      $count = $rs;
+    } 
+    if(isset($_GET['trang']))
+    {
+      $trang = $_GET['trang'];
+    }else $trang =0;
+    $begin = $trang * 3;
 
-    $sql = "SELECT `id`,`ho`,`ten`,`username`,`password`,`status` FROM khachhang";
+    if(isset($_GET['sort']))
+    {
+      $sql = "SELECT `id`,`ho`,`ten`,`username`,`password`,`status` FROM khachhang ORDER BY $_GET[sort] ASC Limit $begin,3 ";
+    }
+    else $sql = "SELECT `id`,`ho`,`ten`,`username`,`password`,`status` FROM khachhang Limit $begin,3";
     if ($result = $conn -> executeQuery($sql)) {
         
   foreach ($result as $row) {
@@ -57,3 +72,16 @@
   </tbody>
 <?php }}?>
 </table>
+
+<nav class="pagination" role="navigation" aria-label="pagination">
+  <ul class="pagination-list">
+  <?php for($i = 0; $i < ceil($count['tong']/ 3); $i++)
+    {  ?>
+    <li>
+    
+      <a class="pagination-link is-current" href="admin.php?id=tkkh&trang=<?php echo $i ; ?>" aria-label="Page 1"><?php echo $i+1  ;?></a>
+    
+    </li>
+    <?php }?>
+  </ul>
+</nav>

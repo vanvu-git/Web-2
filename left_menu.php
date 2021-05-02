@@ -6,8 +6,8 @@
     <li><a href='admin.php?id=sp'><img src='../images/shopping-cart.png'style='width: 20px;'><span style='padding-left: 10px;'>Sản phẩm</span></a></li>
     <li><a href='admin.php?id=dh'><img src='../images/invoices.png'style='width: 20px;'><span style='padding-left: 10px;'>Đơn hàng</span></a></li>
     <li><a href='dangxuat.php'><img src='../images/logout.png'style='width: 20px;'><span style='padding-left: 10px;'>Đăng xuất</span></a></li>
-    <li><a href='admin.php?id=pnh'><img src='../images/logout.png'style='width: 20px;'><span style='padding-left: 10px;'>Phiếu nhập hàng</span></a></li>
-    <li><a href='admin.php?id=ycnh'><img src='../images/logout.png'style='width: 20px;'><span style='padding-left: 10px;'>Yêu cầu nhập hàng</span></a></li>
+    <li><a href='admin.php?id=pnh'><img src='../images/to-do.png'style='width: 20px;'><span style='padding-left: 10px;'>Phiếu nhập hàng</span></a></li>
+    <li><a href='admin.php?id=ycnh'><img src='../images/trolley.png'style='width: 20px;'><span style='padding-left: 10px;'>Yêu cầu nhập hàng</span></a></li>
     <?php } ?>
   </ul> 
 </div>

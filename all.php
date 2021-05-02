@@ -18,12 +18,16 @@
                     </div>
 
                     <div class="field">
-                        <label for="" class="label">ID thể loại:</label>
-                        <div class="control">
-                            <input type="text" class="input" name="mtl" value="" id="mtl">
-                        </div>    
-                        <div id="showPasswordError" class="has-text-danger"></div>
+                    <label for="" class="label">ID thể loại:</label>
+                    <div class="select">
+                        <select id="mtl" name="mtl">
+                            <option>PS</option>
+                            <option>XB</option>
+                            <option>NTD</option>
+                        </select>
                     </div>
+                    <div id="showNameError" class="has-text-danger"></div>
+                    </div>            
 
                     <div class="field">
                         <label for="" class="label">Tên</label>

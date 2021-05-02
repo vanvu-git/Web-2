@@ -34,12 +34,23 @@
 
 <?php
     $conn = new mysqlconnection("localhost","root","","console-beta");
+    $sql = "SELECT COUNT(id) AS 'tong' FROM hoadon";
+    $result = $conn->executeQuery($sql);
+    foreach($result as $rs)
+    {
+      $count = $rs;
+    }
+    if(isset($_GET['trang']))
+    {
+      $trang = $_GET['trang'];
+    }else $trang =0;
 
+    $begin = $trang * 5;
     if(isset($_GET['start']) && isset($_GET['end']))
     {
-      $sql = "SELECT * FROM hoadon WHERE thoigian BETWEEN '$_GET[start]' AND '$_GET[end]'";
+      $sql = "SELECT * FROM hoadon WHERE thoigian BETWEEN '$_GET[start]' AND '$_GET[end]' LIMIT $begin,5";
     }
-   else $sql = "SELECT * FROM hoadon";
+   else $sql = "SELECT * FROM hoadon LIMIT $begin,5";
 ?>
 
 <table class="table is-hoverable">
@@ -57,7 +68,7 @@
   </thead>
    
 <?php  
-  $stt = 1;
+  $stt = $begin + 1;
   $result = $conn->executeQuery($sql);
   
   
@@ -146,3 +157,15 @@
 </table>
     
  
+<nav class="pagination" role="navigation" aria-label="pagination">
+  <ul class="pagination-list">
+  <?php for($i = 0; $i < ceil($count['tong']/ 5); $i++)
+    {  ?>
+    <li>
+    
+      <a class="pagination-link is-current" href="admin.php?id=dh&trang=<?php echo $i ; ?>" aria-label="Page 1"><?php echo $i+1  ;?></a>
+    
+    </li>
+    <?php }?>
+  </ul>
+</nav>

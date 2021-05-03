@@ -12,7 +12,7 @@
       <th><a href="admin.php?id=tkkh&sort=ho">Họ</a></th>
       <th><a href="admin.php?id=tkkh&sort=ten">Tên</a></th>
       <th><a href="admin.php?id=tkkh&sort=username">Username</a></th>
-      <th><a href="admin.php?id=tkkh&sort=password">Password</a></th>
+      
       <th><a href="admin.php?id=tkkh&sort=status">Trạng thái</a></th>
     </tr>
 </thead>
@@ -45,7 +45,7 @@
       <td><?php echo $row['ho'];?></td>
       <td><?php echo $row['ten'];?></td>
       <td><?php echo $row['username'];?></td>
-      <td><?php echo $row['password'];?></td>
+      
         <?php if($row['status']==0) {?>
             <td><button class="button is-danger" onclick="myFunction('<?php echo $row['id']; ?>')">Đã bị khóa</td>
         <?php } 

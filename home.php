@@ -55,6 +55,7 @@
             </div>
         </div>
 
+        <?php  if($account['ChucVu'] == "QL") {  ?>
         <div class="column is-6-mobile is-3-tablet is-3-desktop">
             <div class="box">
             <a href="admin.php?id=tkkh" class="bigger-when-hover">
@@ -64,7 +65,7 @@
             </a>
             </div>
         </div>
-
+        <?php } ?>
         <div class="column is-6-mobile is-3-tablet is-3-desktop">
             <div class="box">
             <a href="admin.php?id=pnh" class="bigger-when-hover">

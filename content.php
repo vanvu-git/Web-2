@@ -12,6 +12,7 @@ if(isset($_GET['id']))
 	else if($id == "pnh")     include('phieunhap.php');
 	else if($id == "ycnh")     include('yeucaunhaphang.php');
 	else if($id == "home")     include('home.php');
+	else if($id == "tknv")     include('TK_NV.php');
 	else if($id == "tk"){
 		if(isset($_GET['act'])){
 			if($_GET['act']=='tg')

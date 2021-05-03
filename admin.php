@@ -13,7 +13,7 @@ include ('../template/mysqlconnection.php');
     <title>ConsoleShop/Admin</title>
     <link rel="stylesheet" href="bulma/css/bulma.css">
     <link rel="stylesheet" href="./plugin/fontawesome/css/all.css">
-    <link rel="stylesheet" href="bulma/css/thongke.css">
+    
 <script>
 function myFunction(x) {
     var element = document.getElementById(x);

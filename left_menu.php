@@ -62,7 +62,8 @@
               </ul>
         </div>
     <?php } ?>
-    <?php if($account['ChucVu'] == "AD") {?>
+    <?php if($account['ChucVu'] == "Admin") {?>
+      <li><a href='admin.php?id=tknv'><img src='../images/man-user.png'style='width: 20px;'><span style='padding-left: 10px;'>Tài khoản nhân viên</span></a></li>
       <li><a href='admin.php?id=tkkh'><img src='../images/man-user.png'style='width: 20px;'><span style='padding-left: 10px;'>Tài khoản khách hàng</span></a></li>
     <?php } ?>
 

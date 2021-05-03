@@ -4,6 +4,78 @@
     </div>
 </nav>
 
+<button class="button is-info"  onclick="myFunction('add')">Thêm</button></td>
+  <div class="modal" id="add">
+          <div class="modal-background"></div>
+          <div class="modal-card">
+              <header class="modal-card-head">
+              <p class="modal-card-title">Thêm nhân viên</p>
+              <button class="delete" onclick="myFunction('add')" aria-label="close"></button>
+              </header>
+              <section class="modal-card-body">
+              <form action="xuly/xulythemnv.php" method="POST"  name="them_nv">
+                    <h3 class="is-size-3 has-text-center">Thêm</h3>
+                    <div class="field">
+                        <label for="" class="label">Id:</label>
+                        <div class="control">
+                            <input type="text" class="input" name="idnv" value="" id="idnv">
+                        </div>
+                        <div id="showUsernameError" class="has-text-danger"></div>
+                    </div>
+
+                    <div class="field">
+                        <label for="" class="label">Họ:</label>
+                        <div class="control">
+                            <input type="text" class="input" name="ho" value="" id="ho">
+                        </div>
+                        <div id="showUsernameError" class="has-text-danger"></div>
+                    </div>       
+
+                    <div class="field">
+                        <label for="" class="label">Tên</label>
+                        <div class="control">
+                            <input type="text" class="input" name="ten">
+                        </div>
+                        <div id="showNameError" class="has-text-danger"></div>
+                    </div>
+
+                    <div class="field">
+                        <label for="" class="label">Tài khoản:</label>
+                        <div class="control">
+                            <input type="text" class="input" name="tk">
+                        </div>
+                        <div id="showNameError" class="has-text-danger"></div>
+                    </div>
+                    <div class="field">
+                        <label for="" class="label">Mật khẩu:</label>
+                        <div class="control">
+                            <input type="password" class="input" name="mk">
+                        </div>
+                        <div id="showNameError" class="has-text-danger"></div>
+                    </div>
+
+                    <div class="field">
+                    <label for="" class="label">Quyền:</label>
+                    <div class="select">
+                        <select id="quyen" name="quyen">
+                            <option>NV</option>
+                            <option>Admin</option>
+                            <option>QL</option>
+                        </select>
+                    </div>
+                    <div id="showNameError" class="has-text-danger"></div>
+                    </div> 
+              </section>
+              <footer class="modal-card-foot">
+              <input class="button is-primary" type="submit" class="button" name="submit" value="Thêm">
+              </form>
+              <button class="button" onclick="myFunction('add')">Cancel</button>
+              </footer>
+          </div>
+  </div>
+
+
+
 <table class="table">
 <thead>
     <tr>  
@@ -33,7 +105,7 @@
     {
       $sql = "SELECT * FROM nhanvien WHERE ChucVu = 'NV' OR ChucVu = 'Admin' ORDER BY $_GET[sort] ASC Limit $begin,3 ";
     }
-    else $sql = "SELECT * FROM nhanvien WHERE `ChucVu` = 'NV' OR `ChucVu` = 'Admin' Limit $begin,3";
+    else $sql = "SELECT * FROM nhanvien WHERE `ChucVu` != 'QL' AND id != '$account[id]' Limit $begin,3";
     
     if ($result = $conn -> executeQuery($sql)) {
         
@@ -64,6 +136,7 @@
                         <select id="quyen" name="quyen">
                             <option>NV</option>
                             <option>Admin</option>
+                            <option>QL</option>
                         </select>
                     </div>
                     <div id="showNameError" class="has-text-danger"></div>

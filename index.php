@@ -21,7 +21,7 @@
 
             $conn = new mysqlconnection("localhost", "root", "", "console-beta");
 
-        
+            $password = md5($password);
             if(!$conn){
                 echo "Failed to connect to database";
                 exit();
@@ -34,7 +34,7 @@
                 $account = mysqli_fetch_assoc($result);
                 session_start();
                 $_SESSION['account'] = $account;
-                header("Location:admin.php?id=home");
+                header("Location:admin.php");
             }
             else 
                echo "Sai mật khẩu hoặc sai username";

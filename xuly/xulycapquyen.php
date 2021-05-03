@@ -12,7 +12,7 @@ include ('../../template/mysqlconnection.php');
         $idnv = $_POST['idnv'];
     
     
-    $sql = "UPDATE `nhanvien` SET `ChucVu`='$quyen' WHERE id='$idnv'";
+    $sql = "UPDATE `nhanvien` SET `ChucVu`='$quyen' WHERE id='$idnv' ";
     
     echo $sql;
 $conn->executeUpdate($sql);

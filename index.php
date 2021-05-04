@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>admin</title>
     <link rel="stylesheet" href="bulma/css/bulma.css">
+    <script src="myjs.js"></script>
 </head>
 
 <body>
 <?php 
   include ('../template/mysqlconnection.php'); 
-    $loi = '';
+  $temp = 0;
     if(isset($_POST['submit'])){
         if(isset($_POST['username'])){
          
@@ -28,7 +29,7 @@
             }
             
             $sql = "select * from nhanvien where username = '$username' and password = '$password'";
-            echo $sql;
+            
             $result = $conn->executeQuery($sql);
             if(mysqli_num_rows($result) > 0){
                 $account = mysqli_fetch_assoc($result);
@@ -36,9 +37,9 @@
                 $_SESSION['account'] = $account;
                 header("Location:admin.php");
             }
-            else 
-               echo "Sai mật khẩu hoặc sai username";
-            mysqli_close($conn);
+            else $temp++;
+              
+            
         }
 
     }
@@ -64,6 +65,30 @@
     </div>
 </form>
 
+
+
+
+
+<?php if($temp > 0)
+{  ?>
+<div class="modal is-active" id="tb">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Thông Báo!!!</p>
+      <button class="delete" aria-label="close" onclick="myFunction('tb')"></button>
+    </header>
+    <section class="modal-card-body">
+       sai tài khoản hoặc mật khẩu !!
+    </section>
+    <footer class="modal-card-foot">
+      
+      <button class="button" onclick="myFunction('tb')">Cancel</button>
+    </footer>
+  </div>
+</div>
+<?php } ?>
 </div>
 </body>
 </html>
+

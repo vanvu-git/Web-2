@@ -13,6 +13,7 @@ include ('../../template/mysqlconnection.php');
         echo"ket noi that bai";
     }
     
+    
     $sql = "INSERT INTO `nhanvien`(`id`, `ho`, `ten`,`username`, `password`, `ChucVu`)
      VALUES ( '$idnv' , '$ho' , '$ten' , '$tk' , '$mk', '$quyen')";
     echo $sql;
@@ -20,5 +21,5 @@ include ('../../template/mysqlconnection.php');
  
     
     
-   // header("location:../admin.php?id=tknv");
+    header("location:../admin.php?id=tknv");
 ?>

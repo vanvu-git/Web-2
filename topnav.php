@@ -27,6 +27,9 @@
         <div class="dropdown-menu" id="dropdown-menu4" role="menu">
           <div class="dropdown-content">
             <div class="dropdown-item">
+              <a href='admin.php?id=dmk'><img src='../images/logout.png'style='width: 20px;'><span style='padding-left: 10px;'>Đổi mật khẩu</span></a>
+            </div>
+            <div class="dropdown-item">
               <a href='dangxuat.php'><img src='../images/logout.png'style='width: 20px;'><span style='padding-left: 10px;'>Đăng xuất</span></a>
             </div>
           </div>

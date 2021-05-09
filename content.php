@@ -21,5 +21,6 @@ if(isset($_GET['id']))
 				include('ban_chay.php');
 		}
 	}
+	else if($id == "dmk")     include('doimatkhau.php');
 }
 ?>

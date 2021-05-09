@@ -105,7 +105,7 @@
     {
       $sql = "SELECT * FROM nhanvien WHERE ChucVu = 'NV' OR ChucVu = 'Admin' ORDER BY $_GET[sort] ASC Limit $begin,3 ";
     }
-    else $sql = "SELECT * FROM nhanvien WHERE `ChucVu` != 'QL' AND id != '$account[id]' Limit $begin,3";
+    else $sql = "SELECT * FROM nhanvien WHERE  id != '$account[id]' Limit $begin,3";
     
     if ($result = $conn -> executeQuery($sql)) {
         
@@ -118,9 +118,10 @@
       <td><?php echo $row['ten'];?></td>
       <td><?php echo $row['username'];?></td>
       <td><?php echo $row['ChucVu'];?></td>      
-      <td><button class="button is-primary" onclick="myFunction('<?php echo $row['id']; ?>')">Sửa</td>
+      <td><button class="button is-primary" onclick="myFunction('<?php echo $row['id']; ?>')">Cấp quyền</td>
         <div class="modal" id="<?php echo $row['id']; ?>">
         <div class="modal-background"></div>
+
         <div class="modal-card">
             <form action = "xuly/xulycapquyen.php" method="post">
             <header class="modal-card-head">
@@ -145,6 +146,41 @@
             <footer class="modal-card-foot">
             <input class="button is-link" type="submit" name="submit" value="cấp quyền">
             <button class="button" type="button" onclick="myFunction('<?php echo $row['id']; ?>')">Đóng</button>
+            </footer>
+            </form>
+        </div>
+        </div>
+        <?php if($row['trangthai'] == 0) { ?>
+         <td><button class="button is-danger" onclick="myFunction('lock<?php echo $row['id']; ?>')">Bị khóa</td>
+        <?php } else { ?>
+         <td><button class="button is-success" onclick="myFunction('lock<?php echo $row['id']; ?>')">Bình thường</td>
+        <?php } ?>
+        
+        <div class="modal" id="lock<?php echo $row['id']; ?>">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <form action = "xuly/xulycapquyen.php" method="post">
+            <header class="modal-card-head">
+            <p class="modal-card-title">Khóa tài khoản</p>
+            <button class="delete" type="button" aria-label="close" onclick="myFunction('lock<?php echo $row['id']; ?>')"></button>
+            </header>
+            <section class="modal-card-body">
+            
+            <input type="text" class="is-hidden" name="idnv" value="<?php echo $row['id'] ;?>">
+
+            <div class="field">         
+              <div class="select">
+                <select id="trangthai" name="trangthai">
+                    <option>Khóa</option>
+                    <option>Mở khóa</option>                 
+                </select>
+              </div>
+              <div id="showNameError" class="has-text-danger"></div>
+            </div> 
+            </section>
+            <footer class="modal-card-foot">
+            <input class="button is-link" type="submit" name="submit" value="Hoàn tất">
+            <button class="button" type="button" onclick="myFunction('lock<?php echo $row['id']; ?>')">Đóng</button>
             </footer>
             </form>
         </div>

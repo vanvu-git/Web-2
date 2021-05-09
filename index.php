@@ -12,7 +12,7 @@
 <body>
 <?php 
   include ('../template/mysqlconnection.php'); 
-  $temp = 0;
+  $error = 0;
     if(isset($_POST['submit'])){
         if(isset($_POST['username'])){
          
@@ -33,11 +33,16 @@
             $result = $conn->executeQuery($sql);
             if(mysqli_num_rows($result) > 0){
                 $account = mysqli_fetch_assoc($result);
-                session_start();
-                $_SESSION['account'] = $account;
-                header("Location:admin.php");
+                if($account['trangthai'] == 1)
+                {
+                  session_start();
+                  $_SESSION['account'] = $account;
+                  header("Location:admin.php");
+                }
+                else $error = 2;
+                
             }
-            else $temp++;
+            else $error = 1;
               
             
         }
@@ -45,7 +50,9 @@
     }
 
 ?>
-<form action="index.php" method="POST" class="p-3 m-5 box" name="admin">
+<div class = "columns is-centered">
+<form action="index.php" method="POST" class="column is-half mt-6 box" name="admin">
+<h3 class="is-size-4 mb-4">Đăng nhập nhân viên</h3>
 <div class="field">
   <label class="label">Tài khoản</label>
   <div class="control">
@@ -69,7 +76,7 @@
 
 
 
-<?php if($temp > 0)
+<?php if($error == 1)
 {  ?>
 <div class="modal is-active" id="tb">
   <div class="modal-background"></div>
@@ -87,8 +94,36 @@
     </footer>
   </div>
 </div>
+
+
+
 <?php } ?>
+
+<?php if($error == 2)
+{  ?>
+<div class="modal is-active" id="tb">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Thông Báo!!!</p>
+      <button class="delete" aria-label="close" onclick="myFunction('tb')"></button>
+    </header>
+    <section class="modal-card-body">
+       Tài khoản đã bị khóa !!
+    </section>
+    <footer class="modal-card-foot">
+      
+      <button class="button" onclick="myFunction('tb')">Cancel</button>
+    </footer>
+  </div>
 </div>
+
+
+
+<?php } ?>
+
+
+
 </body>
 </html>
 

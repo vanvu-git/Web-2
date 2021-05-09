@@ -67,6 +67,6 @@
       <li><a href='admin.php?id=tkkh'><img src='../images/man-user.png'style='width: 20px;'><span style='padding-left: 10px;'>Tài khoản khách hàng</span></a></li>
     <?php } ?>
 
-    <li><a href='dangxuat.php'><img src='../images/logout.png'style='width: 20px;'><span style='padding-left: 10px;'>Đăng xuất</span></a></li>
+    
   </ul> 
 </div>
